@@ -1,121 +1,127 @@
-
-  <!DOCTYPE html>
-  <html>
-    <head>
-        <title>Snake Game Home</title>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <style type="text/css">
-        .content
-        {
-            margin: 0 auto;
-            width:300px;
-            position: absolute;
-            top: 50%;
-                left:50%;
-                transform: translate(-50%,-35%);
-                   }
-      #nav
-      {
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game Home</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      .content {
+        margin: 0 auto;
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+      }
+      #nav {
         margin: 0 auto;
       }
-      
-      </style>
-    </head>
+    </style>
+  </head>
 
-    <body>
-        <script type="text/javascript" src='index.js'> </script>
-        <div id="nav">
-                <div class="navbar-fixed">
-                        <nav>
-                          <div class="nav-wrapper black">
-                            <a href="#!" class="brand-logo left styling">&nbsp;&nbsp;Feed the Snake</a>
-                            <ul class="right hide-on-small-and-down">
-                              <li class="active red"><a href="index.html">Select Maze</a></li>
-                              <li><a href="difficulty.html">Difficulty</a></li>
-                              <li ><a href="instruction.html">Instructions</a></li>
-                            </ul>
-                          </div>
-                        </nav>
-                      </div>
-                            
-                </div>
-        
-        <div class="content">
+  <body>
+    <div id="nav">
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="left styling">&nbsp;&nbsp;Feed the Snake</a>
+            <ul class="right hide-on-small-and-down">
+              <li class="active red"><a href="index.html">Select Maze</a></li>
+              <li><a href="difficulty.html">Difficulty</a></li>
+              <li><a href="instruction.html">Instructions</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
 
-               
-
-
-            <ul class="collection">
-<!--                <a href="difficulty1.html">-->
-                <a href="javascript:choose_difficulty('limitless')">
-                <li class="collection-item avatar">
-                            <i class="material-icons circle purple darken-2">accessibility</i>
-                      <span class="title">LIMITLESS</span>
-                      <p>No Boundary<br>
-                         Apprentice
-                      </p>
-                      <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-                    </li>
-                </a>
-<!--                <a href="difficulty2.html">-->
-                <a href="javascript:choose_difficulty('keep')">
-                    <li class="collection-item avatar">
-                      <i class="material-icons circle  green accent-3">radio_button_unchecked</i>
-                      <span class="title">KEEP IT IN</span>
-                      <p>Boundary all over the field<br>
-                         Trained
-                      </p>
-                      <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-                    </li>
-                </a>
-<!--                    <a href="difficulty3.html">-->
-                <a href="javascript:choose_difficulty('sneak')">
-                    <li class="collection-item avatar">
-                      <i class="material-icons circle amber darken-2">crop_free</i>
-                      <span class="title">SNEAK PAST</span>
-                      <p>Small Gaps<br>
-                         Able
-                      </p>
-                      <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-                    </li>
-                </a>
-<!--                    <a href="difficulty4.html">-->
-                <a href="javascript:choose_difficulty('watch')">
-                    <li class="collection-item avatar">
-                      <i class="material-icons circle  deep-orange darken-1">record_voice_over</i>
-                      <span class="title">WATCH YOUR HEAD</span>
-                      <p>Barriers In Between<br>
-                         Competent
-                      </p>
-                      <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-                    </li>
-                </a>
-<!--                    <a href="difficulty5.html">-->
-                <a href="javascript:choose_difficulty('death')">
-                    <li class="collection-item avatar">
-                            <i class="material-icons circle red accent-4">nfc</i>
-                            <span class="title">DEATH TRAP</span>
-                            <p>Caged Field<br>
-                               Experienced
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-                          </li>
-                        </a>
-                  </ul>
-
-                </div>
-
-
-
-
-      <!--JavaScript at end of body for optimized loading-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </body>
-  </html>
-        
+    <div class="mainContent">
+      <ul class="mainCollection">
+        <a href="javascript:choose_difficulty('limitless')">
+          <li class="collection-item avatar listItem">
+            <div style="display: inline-block;position: relative; top: -20px;margin-right: 30px;margin-left: 20px;">
+              <i style="color: white;padding: 5px;" class="material-icons circle purple darken-2">accessibility</i>
+            </div>
+            <div style="display: inline-block;">
+            <p>LIMITLESS <br>  
+              No Boundary<br />
+              Apprentice
+            </p>
+            </div>
+            <!-- <a href="#!" class="secondary-content"><i class="material-icons">send</i></a> -->
+          </li>
+        </a>
+        <a href="javascript:choose_difficulty('keep')">
+          <li class="collection-item avatar listItem">
+            <div style="display: inline-block;position: relative; top: -20px;margin-right: 30px;margin-left: 20px;">
+              <i style="color: white;padding: 5px;" class="material-icons circle green accent-3">radio_button_unchecked</i>
+            </div>
+            <div style="display: inline-block;">
+            <p>KEEP IT IN <br>
+              Boundary all over the field<br />
+              Trained
+            </p>
+            </div>
+            <!-- <a href="#!" class="secondary-content"><i class="material-icons">send</i></a> -->
+          </li>
+        </a>
+        <a href="javascript:choose_difficulty('sneak')">
+          <li class="collection-item avatar listItem">
+            <div style="display: inline-block;position: relative; top: -20px;margin-right: 30px;margin-left: 20px;">
+              <i style="color: white;padding: 5px;" class="material-icons circle amber darken-2">crop_free</i>
+            </div>
+            <div style="display: inline-block;">
+            <p>SNEAK PAST<br/>
+              Small Gaps<br />
+              Able
+            </p>
+            </div>
+            <!-- <a href="#!" class="secondary-content"><i class="material-icons">send</i></a> -->
+          </li>
+        </a>
+        <a href="javascript:choose_difficulty('watch')">
+          <li class="collection-item avatar listItem">
+            <div style="display: inline-block;position: relative; top: -20px;margin-right: 30px;margin-left: 20px;">
+              <i style="color: white;padding: 5px;" class="material-icons circle deep-orange darken-1">record_voice_over</i>
+            </div>
+            <div style="display: inline-block;">
+            <p>WATCH YOUR HEAD <br>
+              Barriers In Between<br />
+              Competent
+            </p>
+            </div>
+            <!-- <a href="#!" class="secondary-content"><i class="material-icons">send</i></a> -->
+          </li>
+        </a>
+        <a href="javascript:choose_difficulty('death')">
+          <li class="collection-item avatar listItem">
+            <div style="display: inline-block;position: relative; top: -20px;margin-right: 30px;margin-left: 20px;">
+              <i style="color: white;padding: 5px;" class="material-icons circle red accent-4">nfc</i>
+            </div>
+            <div style="display: inline-block;">
+            <p>DEATH TRAP<br/>
+              Caged Field<br />
+              Experienced
+            </p>
+            </div>
+            <!-- <a href="#!" class="secondary-content"><i class="material-icons">send</i></a> -->
+          </li>
+        </a>
+      </ul>
+    </div>
+  <script type="text/javascript" src='index.js'> </script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

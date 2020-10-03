@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snake Game</title>
+        <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="/main.css" />
+      <link rel="stylesheet" href="/game.css" />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    </head>
+    <body>
+        
+            <nav>
+                    <div class="nav-wrapper">
+                      <a href="index.html" class="brand-logo center red darken-1">
+                            &nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
+                      
+                    </div>
+                  </nav>
+                  
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div id="right">
+        <div id="score">Score = 0</div>
+        <input id="btn2" type=button onClick="parent.location='limitless2.html'" value='RESTART'>
+    </div>
+
+        <div class="left">
+        <div id="speedX"></div>
+        <div id="speedY"></div>
+        <p> You can change the Difficulty by One Star at a time by pressing the buttons once</p>
+        <button id="btn">Difficulty Up</button>
+        <button id="btn1">Difficulty Down</button>
+        </div>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            let score = 0;
+            const BORDER = "black";
+            const BACKGROUND = "#ffffff";
+            const SNAKE = "#69f0ae";
+            const SBORDER = "#1b5e20";
+            const FOOD = "red";
+            const FBORDER = "#3e2723";
+            const MAZE = "black";
+            const MBORDER = "red";
+            let increment = 10;
+            let snake =
+            [
+                {x:150,y:150},
+                {x:140,y:150},
+                {x:130,y:150},
+                {x:120,y:150},
+                {x:110,y:150},
+            ];
+
+            
+            let foodX;
+            let foodY;
+            let dx = 10;
+            let dy = 0;
+            let changingDirection = false;
+            let speed = 100;
+            const gameCanvas = document.getElementById("gameCanvas");
+            const ctx = gameCanvas.getContext("2d");
+            createFood();
+            main();
+            document.getElementById("btn").onclick = function()
+            {
+                speed = speed/2;
+                increment = increment*2;
+            }
+            document.getElementById("btn1").onclick = function()
+            {
+                speed = speed*2;
+                increment = increment/2;
+            }
+            
+            document.addEventListener("keydown", changeDirection);
+            function main()
+            {
+                if(didEnd())
+                {
+                    alert("The Snake DIED!");
+                    clearCanvas();
+                    return;
+                }
+                setTimeout(function onTick()
+                {
+                    changingDirection = false;
+                    document.getElementById("speedX").innerHTML = "Horizontal Speed = "+((dx*1000)/speed)+" px/sec";
+                    document.getElementById("speedY").innerHTML = "Vertical Speed = "+((dy*1000)/speed)+" px/sec";
+                    clearCanvas();
+                    
+                    drawFood();
+                    advanceSnake();
+                    drawSnake();
+                    main();
+                    
+                },speed);
+            }
+            
+            function advanceSnake()
+            {
+                reset();
+                const head = { x: snake[0].x + dx, y: snake[0].y + dy};
+                
+                snake.unshift(head);
+                const eatenFood = snake[0].x === foodX && snake[0].y === foodY;
+                if(eatenFood)
+                {
+                    createFood();
+                    score = score + increment;
+                    document.getElementById("score").innerHTML = "Score = "+score;
+                    
+                    
+                }
+                else
+                    snake.pop();
+            }
+            function drawSnake()
+            {
+                snake.forEach(drawSnakePart);
+            }
+            
+            function changeDirection(event)
+            {
+                const LEFT = 37;
+                const RIGHT = 39;
+                const UP = 38;
+                const DOWN = 40;
+                if(changingDirection)
+                    return;
+                changingDirection = true;
+                const KEY = event.keyCode;
+                const GOING_UP = dy === -10;
+                const GOING_DOWN = dy === 10;
+                const GOING_LEFT = dx === -10;
+                const GOING_RIGHT = dx === 10;
+                if((KEY === LEFT) && !(GOING_RIGHT))
+                {
+                    dx = -10;
+                    dy = 0;
+                }
+                if((KEY === RIGHT) && !(GOING_LEFT))
+                {
+                    dx = 10;
+                    dy = 0;
+                }
+                if((KEY === UP) && !(GOING_DOWN))
+                {
+                    dx = 0;
+                    dy = -10;
+                }
+                if((KEY === DOWN) && !(GOING_UP))
+                {
+                    dx = 0;
+                    dy = 10;
+                }
+                
+            }
+            function drawSnakePart(snakePart)
+            {
+                ctx.beginPath();
+                ctx.rect(snakePart.x,snakePart.y,10,10);
+                ctx.fillStyle = SNAKE;
+                ctx.fill();
+                ctx.strokeStyle = SBORDER;
+                ctx.stroke();
+            }
+            
+            function clearCanvas()
+            {
+                ctx.beginPath();
+                ctx.rect(0,0,gameCanvas.width,gameCanvas.height);
+                ctx.fillStyle = BACKGROUND;
+                ctx.fill();
+                ctx.strokeStyle = BORDER;
+                ctx.stroke();
+            }
+            
+            function createFood()
+            {
+                foodX = randomTen(0, gameCanvas.width - 10);
+                foodY = randomTen(0, gameCanvas.height - 10);
+                snake.forEach(isFoodOnSnake);
+                
+            }
+            function randomTen(min,max)
+            {
+                return Math.round((Math.random()*(max - min) + min) / 10) * 10;
+            }
+            function isFoodOnSnake(foodPart)
+            {
+                
+                    const foodIsOnSnake = foodPart.x == foodX && foodPart.y == foodY;
+                    if(foodIsOnSnake)
+                    {
+                        createFood();
+                    }
+            }
+            
+            function drawFood()
+            {
+                ctx.beginPath();
+                ctx.rect(foodX, foodY, 10, 10);
+                ctx.fillStyle = FOOD;
+                ctx.fill();
+                ctx.strokeStyle = FBORDER;
+                ctx.stroke();
+            }
+            function didEnd()
+            {
+                for(i = 4; i < snake.length; i++)
+                {
+                    const didCollide1 = ((snake[i].x === snake[0].x) && (snake[i].y === snake[0].y));
+                    if(didCollide1)
+                        return true;
+                }
+            }
+            function reset()
+            {
+                for(i = 0; i < snake.length; i++)
+                {
+                    if(snake[i].x > gameCanvas.width - 10)
+                        snake[i].x = 0;
+                    if(snake[i].x < 0)
+                    snake[i].x = gameCanvas.width - 10;
+                    if(snake[i].y > gameCanvas.height - 10)
+                        snake[i].y = 0;
+                    if(snake[i].y < 0)
+                    snake[i].y = gameCanvas.height - 10;
+                }
+                
+            }
+            
+            
+            
+
+        </script>
+            
+        
+    </body>
+</html>
