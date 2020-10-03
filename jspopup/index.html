@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Pop UPs example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- popup container  -->
+    <div id="modal-container">
+        <div class="modal-background">
+            <div class="modal">
+                <h2>Oops...!</h2>
+                <p>The Snake has died </p>
+                <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                    preserveAspectRatio="none">
+                    <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <h1>Popup Animations</h1>
+        <div class="buttons">
+          <div id="one" class="button">Revealing</div>
+          <div id="two" class="button">Sketch</div>
+        </div>
+      </div>
+
+      <script>
+          $('.button').click(function(){
+  var buttonId = $(this).attr('id');
+  $('#modal-container').removeAttr('class').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('#modal-container').click(function(){
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+      </script>
+</body>
+
+</html>
