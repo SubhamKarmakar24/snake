@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Difficulty</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script type="text/javascript">
+        function initialize() {
+            let parameters = location.search.substring(1).split("&");
+            let temp = parameters[0].split("=");
+            let maze_type = unescape(temp[1]);
+            document.getElementById(maze_type).style.display = "block"
+        }
+    </script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .content
+        {
+            margin: 0 auto;
+            width:300px;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-25%);
+        }
+        #nav
+        {
+            margin: 0 auto;
+        }
+        .text
+        {
+            margin: 0 auto;
+            text-align: justify;
+        }
+        #limitless{
+            display: none;
+        }
+        #keep{
+            display: none;
+        }
+        #sneak{
+            display: none;
+        }
+        #death{
+            display: none;
+        }
+        #watch{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body onload="initialize()">
+<script type="text/javascript" src='index.js'> </script>
+<div id="nav">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper black">
+                <a href="#!" class="brand-logo left styling">&nbsp;&nbsp;Feed the Snake</a>
+                <ul class="right hide-on-small-and-down">
+                    <li><a href="index.html">Select Maze</a></li>
+                    <li class="active red"><a href="#">Difficulty</a></li>
+                    <li ><a href="instruction.html">Instructions</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</div>
+
+<div id = "limitless">
+    <div class="content">
+        <div class="collection">
+<!--            <a href="limitless1.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('limitlessness','5','200')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                SLOWER
+            </a>
+<!--            <a href="limitless2.html" class="collection-item active">-->
+            <a href="javascript:choose_challenge_type('limitlessness','10','100')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Default) SLOW
+            </a>
+<!--            <a href="limitless3.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('limitlessness','20','50')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                NORMAL
+            </a>
+<!--            <a href="limitless4.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('limitlessness','40','25')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FAST
+            </a>
+<!--            <a href="limitless5.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('limitlessness','80','12.5')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FASTER
+            </a>
+        </div>
+
+
+        <div class="text">
+            <br>
+            You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
+        </div>
+
+    </div>
+</div>
+
+<div id="keep">
+    <div class="content">
+        <div class="collection">
+<!--            <a href="keep1.html" class="collection-item">-->
+                <a href="javascript:choose_challenge_type('keeps','5','200')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                SLOWER
+            </a>
+<!--            <a href="keep2.html" class="collection-item active">-->
+            <a href="javascript:choose_challenge_type('keeps','10','100')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Default) SLOW
+            </a>
+<!--            <a href="keep3.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('keeps','20','50')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                NORMAL
+            </a>
+<!--            <a href="keep4.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('keeps','40','25')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FAST
+            </a>
+<!--            <a href="keep5.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('keeps','80','12.5')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FASTER
+            </a>
+        </div>
+
+
+        <div class="text">
+            <br>
+            You can also change the Difficulty level in-game by adjusting the Speed Increase or Decrease button according to your needs.
+        </div>
+
+    </div>
+</div>
+
+<div id = "sneak">
+    <div class="content">
+
+        <div class="collection">
+<!--            <a href="sneak1.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('sneaks','5','200')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                SLOWER
+            </a>
+<!--            <a href="sneak2.html" class="collection-item active">-->
+            <a href="javascript:choose_challenge_type('sneaks','10','100')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Default) SLOW
+            </a>
+<!--            <a href="sneak3.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('sneaks','20','50')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                NORMAL
+            </a>
+<!--            <a href="sneak4.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('sneaks','40','25')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FAST
+            </a>
+<!--            <a href="sneak5.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('sneaks','80','12.5')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FASTER
+            </a>
+        </div>
+
+
+        <div class="text">
+            <br>
+            You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
+        </div>
+
+    </div>
+</div>
+
+<div id = watch>
+    <div class="content">
+
+        <div class="collection">
+<!--            <a href="watch1.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('watches','5','200')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                SLOWER
+            </a>
+<!--            <a href="watch2.html" class="collection-item active">-->
+            <a href="javascript:choose_challenge_type('watches','10','100')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Default) SLOW
+            </a>
+<!--            <a href="watch3.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('watches','20','50')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                NORMAL
+            </a>
+<!--            <a href="watch4.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('watches','40','25')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FAST
+            </a>
+<!--            <a href="watch5.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('watches','80','12.5')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FASTER
+            </a>
+        </div>
+
+
+        <div class="text">
+            <br>
+            You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
+        </div>
+
+    </div>
+</div>
+
+<div id = death>
+    <div class="content">
+
+        <div class="collection">
+<!--            <a href="death1.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('deaths','5','200')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                SLOWER
+            </a>
+<!--            <a href="death2.html" class="collection-item active">-->
+            <a href="javascript:choose_challenge_type('deaths','10','100')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (Default) SLOW
+            </a>
+<!--            <a href="death3.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('deaths','20','50')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                NORMAL
+            </a>
+<!--            <a href="death4.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('deaths','40','25')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FAST
+            </a>
+<!--            <a href="death5.html" class="collection-item">-->
+            <a href="javascript:choose_challenge_type('deaths','80','12.5')" class="collection-item">
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                <i class="material-icons circle purple darken-2">stars</i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                FASTER
+            </a>
+        </div>
+
+
+        <div class="text">
+            <br>
+            You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

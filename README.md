@@ -5,7 +5,7 @@
 >
 > There is also an instructions tab which enables players to know how to play.
 
-Work on this repository by cloning it and running any .html files
+Work on this repository by cloning it and running index.html file
 
 The game is available at https://subhamkarmakar24.github.io/snake/
 
