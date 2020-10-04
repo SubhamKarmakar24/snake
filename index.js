@@ -3,7 +3,7 @@
         window.location.href = "index.html"
     }
     else{
-        window.location.href = "difficulties.html?maze=" + maze_type
+        window.location.href = "difficulty.html?maze=" + maze_type
     }
 }
 
