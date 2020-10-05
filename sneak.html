@@ -158,7 +158,7 @@
     }
     document.addEventListener("keydown", changeDirection);
     function main()
-    {
+    { swipechange(event);
         if(didEnd())
         {
             alert("The Snake DIED!");
@@ -206,40 +206,110 @@
     {
         maze.forEach(drawMazePart);
     }
-    function changeDirection(event)
-    {
-        const LEFT = 37;
-        const RIGHT = 39;
-        const UP = 38;
-        const DOWN = 40;
-        if(changingDirection)
-            return;
-        changingDirection = true;
-        const KEY = event.keyCode;
-        const GOING_UP = dy === -10;
-        const GOING_DOWN = dy === 10;
-        const GOING_LEFT = dx === -10;
-        const GOING_RIGHT = dx === 10;
-        if((KEY === LEFT) && !(GOING_RIGHT))
-        {
-            dx = -10;
-            dy = 0;
+
+    function swipechange(event) {
+            // if user swipes in then the canvas shouldn't move,only the snake would change direction
+            var fixed = document.getElementById('gameCanvas');
+
+            fixed.addEventListener('touchmove', function(e) {
+
+            e.preventDefault();
+
+            }, false);
+            let touchstartX = 0;
+            let touchstartY = 0;
+            let touchendX = 0;
+            let touchendY = 0;
+
+            const gestureZone = document.getElementById("gameCanvas");
+
+            gestureZone.addEventListener('touchstart', function (event) {
+                touchstartX = event.changedTouches[0].screenX;
+                touchstartY = event.changedTouches[0].screenY;
+            }, false);
+
+            gestureZone.addEventListener('touchend', function (event) {
+                touchendX = event.changedTouches[0].screenX;
+                touchendY = event.changedTouches[0].screenY;
+                handleGesture();
+            }, false);
+
+            function handleGesture() {
+
+
+
+                if (changingDirection)
+                    return;
+                changingDirection = true;
+                const GOING_UP = dy === -10;
+                const GOING_DOWN = dy === 10;
+                const GOING_LEFT = dx === -10;
+                const GOING_RIGHT = dx === 10;
+
+                if (touchendX < touchstartX) {
+                    if (!GOING_RIGHT) {
+                        dx = -10;
+                        dy = 0;
+                    }
+                    // console.log('Swiped left');
+                }
+                if (touchendX > touchstartX) {
+                    if (!GOING_LEFT) {
+                        dx = 10;
+                        dy = 0;
+                    }
+
+                }
+
+                if (touchendY < touchstartY) {
+                    if (!GOING_DOWN) {
+
+                        dx = 0;
+                        dy = -10;
+                    }
+                }
+                if (touchendY > touchstartY) {
+                    if (!GOING_UP) {
+                        dx = 0;
+                        dy = 10;
+                    }
+                }
+            }
+
         }
-        if((KEY === RIGHT) && !(GOING_LEFT))
-        {
-            dx = 10;
-            dy = 0;
-        }
-        if((KEY === UP) && !(GOING_DOWN))
-        {
-            dx = 0;
-            dy = -10;
-        }
-        if((KEY === DOWN) && !(GOING_UP))
-        {
-            dx = 0;
-            dy = 10;
-        }
+  
+
+    function changeDirection(event) {
+    const LEFT = 37;
+    const RIGHT = 39;
+    const UP = 38;
+    const DOWN = 40;
+    if (changingDirection)
+    return;
+    changingDirection = true;
+    const KEY = event.keyCode;
+    const GOING_UP = dy === -10;
+    const GOING_DOWN = dy === 10;
+    const GOING_LEFT = dx === -10;
+    const GOING_RIGHT = dx === 10;
+
+    // some modifications for controls with WASD
+    if ((KEY === LEFT) || (KEY === 65) && !(GOING_RIGHT)) {
+    dx = -10;
+    dy = 0;
+    }
+    if ((KEY === RIGHT) || (KEY === 68) && !(GOING_LEFT)) {
+    dx = 10;
+    dy = 0;
+    }
+    if ((KEY === UP) || (KEY === 87) && !(GOING_DOWN)) {
+    dx = 0;
+    dy = -10;
+    }
+    if ((KEY === DOWN) || (KEY === 83) && !(GOING_UP)) {
+    dx = 0;
+    dy = 10;
+    }
 
     }
     function drawSnakePart(snakePart)
