@@ -201,6 +201,14 @@
 
 
 function swipechange(event) {
+            // if user swipes in then the canvas shouldn't move,only the snake would change direction
+            var fixed = document.getElementById('gameCanvas');
+
+            fixed.addEventListener('touchmove', function(e) {
+
+            e.preventDefault();
+
+            }, false);
             let touchstartX = 0;
             let touchstartY = 0;
             let touchendX = 0;
@@ -308,6 +316,7 @@ function swipechange(event) {
         ctx.stroke();
     }
 
+    
     function clearCanvas()
     {
         ctx.beginPath();
