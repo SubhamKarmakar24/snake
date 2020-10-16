@@ -1,0 +1,48 @@
+body{
+    /* background-color: rgb(240,240,240); */
+    /* background-color: #FFE53B; */
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    background-attachment: fixed;
+}
+nav{
+    background-color: rgb(40,40,40);
+    font-size: 27px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+.mainContent{
+    margin: auto;
+    margin-top: 30px;
+    width: 600px;  
+}
+.listItem{
+    padding: 6px 20px;
+    color: black;
+    font-weight: 600;
+    background-color: white;
+    margin: 10px;
+    border-radius: 7px;
+}
+.mainCollection{
+    border-radius: 5px;
+    background-color: rgb(230,230,230);
+    padding: 1px 0px;
+}
+.collection-item{
+    margin: 5px;
+}
+.text{
+    color: white;
+    font-weight: 600;
+}
+.text1{
+    width: 1000px;
+    position: relative;
+    top: 10px;
+    margin: auto;
+    border-radius: 5px;
+    color: black;
+    padding: 20px;
+    font-weight: 600;
+    background-color: white;
+}
