@@ -104,10 +104,11 @@
     }
     document.addEventListener("keydown", changeDirection);
     function main()
-    {
+    { 
+          swipechange(event);
         if(didEnd())
         { 
-            swipechange(event);
+            
             alert("The Snake DIED!");
             clearCanvas();
             return;
@@ -224,7 +225,7 @@ function swipechange(event) {
 
         }
   
-
+        
 
     function changeDirection(event) {
     const LEFT = 37;
