@@ -18,6 +18,6 @@ function choose_challenge_type(challenge,increment, speed)
     }
     else
     {
-        window.location.href = challenge + ".html?increment=" +  increment + "&speed=" +  speed
+        window.location.href = "maze/" + challenge + ".html?increment=" +  increment + "&speed=" +  speed
     }
 }
