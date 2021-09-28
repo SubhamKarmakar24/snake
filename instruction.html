@@ -2,51 +2,52 @@
 <html>
     <head>
         <title>Snake Game</title>
+        
         <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="main.css" />
-      <link rel="stylesheet" href="game.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!--Import materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="game.css" />
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-    <body>
-        
-            <nav>
-                    <div class="nav-wrapper">
-                      <a href="index.html" class="brand-logo center red darken-1">
-                            &nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
-                      
-                    </div>
-                  </nav>
+    
+    <body>    
+        <nav>            
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo center red darken-1">&nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </nav>
                   
         <canvas id="gameCanvas" width="300" height="300"></canvas>
+        
         <div id="right">
-        <div id="score">Score = 0</div>
-        <input id="btn2" type=button onClick="parent.location='instruction.html'" value='RESTART'>
-    </div>
+            <div id="score">Score = 0</div>
+            <input id="btn2" type=button onClick="parent.location='instruction.html'" value='RESTART'>
+        </div>
 
         <div class="left">
-        <div id="speedX"></div>
-        <div id="speedY"></div>
-        <p> You can change the Difficulty by One Star at a time by pressing the buttons once</p>
-        <button id="btn">Difficulty Up</button>
-        <button id="btn1">Difficulty Down</button>
+            <div id="speedX"></div>
+            <div id="speedY"></div>
+            <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
+            <button id="btn">Difficulty Up</button>
+            <button id="btn1">Difficulty Down</button>
         </div>
+        
         <div class="text1">
-                This is how the game is to be played. Use Arrow Keys LEFT, RIGHT, UP and DOWN to control the snake. You can lower or raise the Difficulty(Speed) using the buttons on the left side. The Left panel also tell you about the speed of the snake on the screen. Your main target is to feed the snake with the red food available on the field. If you feed your snake, the Score (on the Right panel) would increase. 
-                <br>
-                But your snake will die if it eats itself or hits one of the obstacles. To play the game again, press the Restart button on the Right panel.
-                <br>
-                Hope you have understood the rules and controls. Enjoy!!!! Press the Go to Home button to select Level to play.
-            </div>
-
-
+            This is how the game is to be played. Use Arrow Keys LEFT, RIGHT, UP and DOWN to control the snake. You can lower or raise the Difficulty(Speed) using the buttons on the left side. The Left panel also tell you about the speed of the snake on the screen. Your main target is to feed the snake with the red food available on the field. If you feed your snake, the Score (on the Right panel) would increase. 
+            <br>
+            But your snake will die if it eats itself or hits one of the obstacles. To play the game again, press the Restart button on the Right panel.
+            <br>
+            Hope you have understood the rules and controls. Enjoy!!!! Press the Go to Home button to select Level to play.
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
         <script>
             let score = 0;
             const BORDER = "black";
@@ -58,31 +59,28 @@
             const MAZE = "black";
             const MBORDER = "red";
             let increment = 10;
-            let snake =
-            [
-                {x:150,y:150},
-                {x:140,y:150},
-                {x:130,y:150},
-                {x:120,y:150},
-                {x:110,y:150},
-            ];
-
             
+            let snake = [{x: 150,y: 150}, {x: 140,y: 150}, {x: 130,y: 150}, {x: 120,y: 150}, {x: 110,y: 150},];
+
             let foodX;
             let foodY;
             let dx = 10;
             let dy = 0;
             let changingDirection = false;
             let speed = 100;
+            
             const gameCanvas = document.getElementById("gameCanvas");
             const ctx = gameCanvas.getContext("2d");
+            
             createFood();
             main();
+            
             document.getElementById("btn").onclick = function()
             {
                 speed = speed/2;
                 increment = increment*2;
             }
+            
             document.getElementById("btn1").onclick = function()
             {
                 speed = speed*2;
@@ -90,6 +88,7 @@
             }
             
             document.addEventListener("keydown", changeDirection);
+            
             function main()
             {
                 if(didEnd())
@@ -105,16 +104,13 @@
                     document.getElementById("speedY").innerHTML = "Vertical Speed = "+((dy*1000)/speed)+" px/sec";
                     clearCanvas();
                     drawFood();
-                    
-                    
-                    
                     advanceSnake();
                     drawSnake();
                     auto();
                     main();
-                    
                 },speed);
             }
+            
             function auto()
             {
                 let difX = foodX - snake[0].x;
@@ -127,10 +123,10 @@
                 if((difX > 0)&&(dx == -10))
                 {
                     if(difY > 0)
-                        {
-                            dx = 0;
-                            dy = 10;
-                        }
+                    {
+                        dx = 0;
+                        dy = 10;
+                    }
                     else
                     {
                         dx = 0;
@@ -145,10 +141,10 @@
                 if((difX < 0)&&(dx == 10))
                 {
                     if(difY > 0)
-                        {
-                            dx = 0;
-                            dy = 10;
-                        }
+                    {
+                        dx = 0;
+                        dy = 10;
+                    }
                     else
                     {
                         dx = 0;
@@ -181,8 +177,6 @@
                         dy = -10;
                     }
                 }
-                
-                 
             }
             
             function advanceSnake()
@@ -197,18 +191,15 @@
                     createFood();
                     score = score + increment;
                     document.getElementById("score").innerHTML = "Score = "+score;
-                    
-                    
                 }
                 else
                     snake.pop();
-                
             }
+
             function drawSnake()
             {
                 snake.forEach(drawSnakePart);
             }
-            
             
             function drawSnakePart(snakePart)
             {
@@ -235,20 +226,20 @@
                 foodX = randomTen(0, gameCanvas.width - 10);
                 foodY = randomTen(0, gameCanvas.height - 10);
                 snake.forEach(isFoodOnSnake);
-                
             }
+
             function randomTen(min,max)
             {
                 return Math.round((Math.random()*(max - min) + min) / 10) * 10;
             }
+
             function isFoodOnSnake(foodPart)
             {
-                
-                    const foodIsOnSnake = foodPart.x == foodX && foodPart.y == foodY;
-                    if(foodIsOnSnake)
-                    {
-                        createFood();
-                    }
+                const foodIsOnSnake = foodPart.x == foodX && foodPart.y == foodY;
+                if(foodIsOnSnake)
+                {
+                    createFood();
+                }
             }
             
             function drawFood()
@@ -260,6 +251,7 @@
                 ctx.strokeStyle = FBORDER;
                 ctx.stroke();
             }
+
             function didEnd()
             {
                 for(i = 4; i < snake.length; i++)
@@ -269,6 +261,7 @@
                         return true;
                 }
             }
+
             function reset()
             {
                 for(i = 0; i < snake.length; i++)
@@ -282,13 +275,7 @@
                     if(snake[i].y < 0)
                     snake[i].y = gameCanvas.height - 10;
                 }
-                
             }
-            
-            
-
         </script>
-            
-        
     </body>
 </html>

@@ -5,6 +5,7 @@
     left:50%;
     transform: translate(-50%,-42%);
 }
+
 #right
 {
     text-align: center;
@@ -26,10 +27,12 @@
     font-size: 200%;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
 #score
 {
     font-size: 130% !important;
 }
+
 #btn
 {
     color: white;
@@ -39,6 +42,7 @@
     padding: 5px;
     font-weight: 500 ;
 }
+
 .left
 {
     border-radius: 10px;
@@ -52,9 +56,9 @@
     padding:30px 10px; 
     width: 375px;
     background-color: #ffffff;
-    /* box-shadow: 15px 15px 15px  #c62828; */
-    
+    /* box-shadow: 15px 15px 15px  #c62828; */    
 }
+
 #btn1
 {
     font-size: 140%;
@@ -64,6 +68,7 @@
     font-weight: 500 ;
     background:#15e415;
 }
+
 #btn2
 {
     font-size: 140%;
@@ -76,6 +81,7 @@
 {
     font-size: 120%;
 }
+
 #speedY
 {
     font-size: 120%;
