@@ -6,7 +6,7 @@ function choose_difficulty(maze_type)
     }
     else
     {
-        window.location.href = "difficulty.html?maze=" + maze_type
+        window.location.href = "pages/difficulty.html?maze=" + maze_type
     }
 }
 
