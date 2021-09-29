@@ -10,3 +10,4 @@ Work on this repository by cloning it and running index.html file
 The game is available at https://subhamkarmakar24.github.io/snake/
 
 Feel free to contribute : )
+
