@@ -229,25 +229,25 @@
                 const GOING_RIGHT = dx === 10;
 
                 // some modifications for controls with WASD
-                if((KEY === LEFT) || (KEY === 65) && !(GOING_RIGHT))
+                if(((KEY === LEFT) || (KEY === 65)) && !(GOING_RIGHT))
                 {
                     dx = -10;
                     dy = 0;
                 }
                 
-                if((KEY === RIGHT) || (KEY === 68) && !(GOING_LEFT))
+                if(((KEY === RIGHT) || (KEY === 68)) && !(GOING_LEFT))
                 {
                     dx = 10;
                     dy = 0;
                 }
                 
-                if((KEY === UP) || (KEY === 87) && !(GOING_DOWN))
+                if(((KEY === UP) || (KEY === 87)) && !(GOING_DOWN))
                 {
                     dx = 0;
                     dy = -10;
                 }
                 
-                if((KEY === DOWN) || (KEY === 83) && !(GOING_UP))
+                if(((KEY === DOWN) || (KEY === 83)) && !(GOING_UP))
                 {
                     dx = 0;
                     dy = 10;
