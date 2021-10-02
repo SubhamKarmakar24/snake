@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="../../assets/css/game.css">
         <link rel="stylesheet" href="../../assets/css/board_stylesheet.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -24,7 +25,15 @@
                 padding: 0px 7%;" class="brand-logo center red darken-1">Go to Home</a>
             </div>
         </nav>
-
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>The Snake DIED!</h4>
+              <p>Please start the game again.</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
         <div class="main_game_box">
             <div id="right">
                 <div id="score">Score = 0</div>
@@ -44,6 +53,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
         <script>
+              function openHandler(){
+            const elem = document.getElementById('modal1');
+            const instance = M.Modal.init(elem, {dismissible: true});
+            instance.open();
+            }
             let score = 0;
             const BORDER = "black";
             const BACKGROUND = "#ffffff";
@@ -97,7 +111,7 @@
                 swipechange(event);
                 if(didEnd())
                 {
-                    alert("The Snake DIED!");
+                    openHandler();
                     clearCanvas();
                     return;
                 }
