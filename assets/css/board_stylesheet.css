@@ -30,13 +30,13 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    
 }
 #gameCanvas {
     position: static;
     top: 0%;
     left: 0%;
     width: 75%;
-
     transform: translate(-0%, 0%);
 }
 @media screen and (max-width: 1000px) {
