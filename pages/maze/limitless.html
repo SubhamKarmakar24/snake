@@ -11,7 +11,8 @@
     
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="../../assets/css/game.css">
-    
+        <link rel="stylesheet" href="../../assets/css/board_stylesheet.css">
+
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -19,25 +20,26 @@
     <body>
         <nav>
             <div class="nav-wrapper">
-                <a href="../../index.html" class="brand-logo center red darken-1">&nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
+                <a href="../../index.html" style="font-size: 25px;
+                padding: 0px 7%;" class="brand-logo center red darken-1">Go to Home</a>
             </div>
         </nav>
 
-        <canvas id="gameCanvas" width="300" height="300"></canvas>
-    
-        <div id="right">
-            <div id="score">Score = 0</div>
-            <input id="btn2" type=button onClick="location.reload()" value='RESTART'>
-        </div>
-
-        <div class="left">
-            <div id="speedX"></div>
-            <div id="speedY"></div>
-            <br><br>
-            <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
-            <button id="btn">Difficulty Up</button>
-            <button id="btn1">Difficulty Down</button>
-        </div>
+        <div class="main_game_box">
+            <div id="right">
+                <div id="score">Score = 0</div>
+                <input id="btn2" type=button onClick="location.reload()" value='RESTART'>
+            </div>
+            <div class="has-canvas"><canvas id="gameCanvas" width="300" height="300"></canvas></div> 
+            <div class="left">
+                <div id="speedX"></div>
+                <div id="speedY"></div>
+                <br><br>
+                <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
+                <button id="btn">Difficulty Up</button>
+                <button id="btn1">Difficulty Down</button>
+            </div>
+    </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
