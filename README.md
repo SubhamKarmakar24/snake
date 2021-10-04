@@ -18,56 +18,49 @@ We all have played this game, haven't we. So, the basic knowledge about this rep
 </div>
 <hr>
 
-## Contribution Guidelines
+## Web tech & Framework used
+- HTML
+- CSS 
+- Vanilla JS
 
-The steps to follow to contribute to any projects:
+<hr>
 
-1. #### Firstly, [install git](https://help.github.com/articles/set-up-git/).
+# Setting up the project for running at local machine
+Step:1 Read the <a href="CONTRIBUTING.md">CONTRIBUTION GUIDELINE</a> before starting this project.
 
-2. ## Fork this repository
-   This will create a copy of this repository in your account.
+Step:2 After cloning repository you can see the folder of this project in your local machine
 
-   Fork <a href="https://github.com/SubhamKarmakar24/snake" target="_blank">this</a> repository.
+Step3: Open the folder
 
-3. ## Clone the repository
-   This will create a copy of this repository in your local machine. Now You are ready to make changes as per your issue.
-   ```
-   git clone https://github.com/SubhamKarmakar24/snake.git
-   ```
+Now you are ready to contribute this project<br />
+If you want to play the game is available at https://subhamkarmakar24.github.io/snake/
+    
+<hr>
 
-4. ### Add a upstream link to main branch in your cloned repo
-    ```
-    git remote add upstream https://github.com/SubhamKarmakar24/snake.git
-    ```
-5. ### Keep your cloned repo upto date by pulling from upstream 
-   This will also avoid any merge conflicts while committing new changes
-    ```
-    git pull upstream main
-    ```
-6. ### Create your feature branch 
-   Always create new branch
-    ```
-    git checkout -b <feature-name>
-    ```
-7. ### Track your changes
-    ```
-    git add .
-    ```
-8. ### Check for your changes.
-    ```
-    git status
-    ```
-9. ### Commit all the changes 
-    Write commit message as "Small Message"
-    ```
-    git commit -m "Write a meaningfull but small commit message"
-    ```
-10. ### Push the changes for review
-    ```
-    git push origin <branch-name>
-    ```
-11. ### Create a PR on Github. 
-    Just hit the create a pull request button, you must write a PR message to clarify why and what are you contributing
+### Read the <a href="CODE_OF_CONDUCT.md ">CODE_OF_CONDUCT</a> before contributing to this project.
+
+# License :
+MIT License
+
+***Copyright (c) 2021 Subham Karmakar***
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.**
 <hr>
 
 #### Feel free to contribute : )
