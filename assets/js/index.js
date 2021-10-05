@@ -21,3 +21,15 @@ function choose_challenge_type(challenge,increment, speed)
         window.location.href = "maze/" + challenge + ".html?increment=" +  increment + "&speed=" +  speed
     }
 }
+
+function myFunction() {
+    var element = document.body;
+    var elementlist = document.getElementsByClassName("listItem");
+    element.classList.toggle("dark-mode");
+
+    for(let i = 0; i < elementlist.length; i += 1) {
+        console.log(elementlist.item(i))
+
+        elementlist.item(i).classList.toggle("list-dark-mode");
+    }
+}

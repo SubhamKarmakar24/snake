@@ -6,6 +6,11 @@ body
     background-attachment: fixed;
 }
 
+.dark-mode {
+    background-image: linear-gradient(147deg, #000066 0%, #000000 74%);
+    color: white;
+}
+
 nav
 {
     background-color: rgb(40,40,40);
@@ -29,6 +34,11 @@ nav
     background-color: white;
     margin: 10px;
     border-radius: 7px;
+}
+
+.list-dark-mode {
+    color: white;
+    background-color: gray;
 }
 
 .mainCollection
