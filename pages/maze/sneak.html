@@ -14,6 +14,9 @@
     
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!--Import jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     
     <body>
@@ -23,6 +26,7 @@
 
             </div>
         </nav>
+        
 
         <canvas id="gameCanvas" width="300" height="300"></canvas>
 
@@ -41,6 +45,16 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <div id="modal" class="modal" style="width: 27%">
+            <div class="modal-content" style="text-align: center">
+                <h2>Oops...!</h2>
+                <p>The Snake DIED!</p>
+            </div>
+            <div class="modal-footer" style="margin-top: -43px;"> 
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+            </div>
+        </div>
 
         <script>
             let score = 0;
@@ -96,10 +110,15 @@
                 swipechange(event);
                 if(didEnd())
                 {
-                    alert("The Snake DIED!");
+                    $(document).ready(function(){
+                        $('#modal').modal();
+                        $('#modal').modal('open'); 
+                    });
+               
                     clearCanvas();
                     return;
                 }
+               
                 setTimeout(function onTick()
                 {
                     changingDirection = false;
@@ -338,14 +357,27 @@
                 for(i = 4; i < snake.length; i++)
                 {
                     const didCollide1 = ((snake[i].x === snake[0].x) && (snake[i].y === snake[0].y));
-                    if(didCollide1)
+                    if(didCollide1) {
+//                         $(document).ready(function() {
+//     setTimeout(function() {
+//       $('#myModal').modal('show');
+//     }, 30000); // milliseconds
+// });
+                    // $("#myModal").modal();
                         return true;
+                    }
                 }
                 for(j = 0; j < maze.length; j++)
                 {
                     const didCollide2 = ((maze[j].x === snake[0].x) && (maze[j].y === snake[0].y));
-                    if(didCollide2)
+                    if(didCollide2) {
+//                         $(document).ready(function() {
+//     setTimeout(function() {
+//       $('#myModal').modal('show');
+//     }, 30000); // milliseconds
+// });
                         return true;
+                    }
                 }
             }
 
