@@ -16,6 +16,9 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!--Import jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     
     <body>
@@ -25,7 +28,26 @@
                 padding: 0px 7%;" class="brand-logo center red darken-1">Go to Home</a>
             </div>
         </nav>
-        <div id="modal1" class="modal">
+
+        
+
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+
+        <div id="right">
+            <div id="score">Score = 0</div>
+            <input id="btn2" type=button onClick="location.reload()" value='RESTART'>
+        </div>
+
+        <div class="left">
+            <div id="speedX"></div>
+            <div id="speedY"></div>
+            <br><br>
+            <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
+            <button id="btn">Difficulty Up</button>
+            <button id="btn1">Difficulty Down</button>
+        </div>
+
+<!--         <div id="modal1" class="modal">
             <div class="modal-content">
               <h4>The Snake DIED!</h4>
               <p>Please start the game again.</p>
@@ -48,9 +70,19 @@
                 <button id="btn">Difficulty Up</button>
                 <button id="btn1">Difficulty Down</button>
             </div>
-    </div>
+    </div> -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <div id="modal" class="modal" style="width: 27%">
+            <div class="modal-content" style="text-align: center">
+                <h2>Oops...!</h2>
+                <p>The Snake DIED!</p>
+            </div>
+            <div class="modal-footer" style="margin-top: -43px;"> 
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+            </div>
+        </div>
 
         <script>
               function openHandler(){
@@ -111,10 +143,18 @@
                 swipechange(event);
                 if(didEnd())
                 {
-                    openHandler();
+
+                    $(document).ready(function(){
+                        $('#modal').modal();
+                        $('#modal').modal('open'); 
+                    });
+               
+<!--                     openHandler(); -->
+
                     clearCanvas();
                     return;
                 }
+               
                 setTimeout(function onTick()
                 {
                     changingDirection = false;
@@ -353,13 +393,13 @@
                 for(i = 4; i < snake.length; i++)
                 {
                     const didCollide1 = ((snake[i].x === snake[0].x) && (snake[i].y === snake[0].y));
-                    if(didCollide1)
+                    if(didCollide1) 
                         return true;
                 }
                 for(j = 0; j < maze.length; j++)
                 {
                     const didCollide2 = ((maze[j].x === snake[0].x) && (maze[j].y === snake[0].y));
-                    if(didCollide2)
+                    if(didCollide2) 
                         return true;
                 }
             }
