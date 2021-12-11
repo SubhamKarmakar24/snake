@@ -14,12 +14,29 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     </head>
     
     <body>    
         <nav>            
             <div class="nav-wrapper">
                 <a href="../index.html" class="brand-logo center red darken-1">&nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
+
+                <div class="toggle-container">
+                    <label>
+                        <input class='toggle-checkbox' id="toggle-checkbox" type='checkbox'></input>
+                        <div class='toggle-slot'>
+                            <div class='sun-icon-wrapper'>
+                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                            </div>
+                            <div class='toggle-button'></div>
+                            <div class='moon-icon-wrapper'>
+                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
             </div>
         </nav>
                   
@@ -48,6 +65,123 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         
+        <script>
+            const themeButton = document.getElementById('toggle-checkbox');
+            const darkTheme = 'dark';
+
+            // Previously selected topic (if user selected)
+            const selectedTheme = localStorage.getItem('selected-theme');
+        
+            // We obtain the current theme that the interface has by validating the dark-theme class
+            const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+            
+            //all the elements to be toggled
+            const nav = document.querySelectorAll('nav');
+            const listitem = document.querySelectorAll('.listItem');
+            const mainCollection = document.querySelectorAll('.mainCollection');
+            const right = document.querySelectorAll('#right');
+            const btn = document.querySelectorAll('#btn');
+            const left = document.querySelectorAll('.left');
+            const btn1 = document.querySelectorAll('#btn1');
+            const btn2 = document.querySelectorAll('#btn2');
+            const text = document.querySelectorAll('.text');
+            const text1 = document.querySelectorAll('.text1');
+            
+            // We validate if the user previously chose a topic
+            if(selectedTheme)
+            {
+                // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+                document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+
+                //all the elements to be toggled
+                for(let i=0;i<nav.length;i++)
+                    nav[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                for(let i=0;i<listitem.length;i++)
+                    listitem[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                for(let i=0;i<mainCollection.length;i++)
+                    mainCollection[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+                
+                    for(let i=0;i<right.length;i++)
+                    right[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn.length;i++)
+                    btn[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<left.length;i++)
+                    left[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn1.length;i++)
+                    btn1[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn2.length;i++)
+                    btn2[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<text.length;i++)
+                    text[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<text1.length;i++)
+                    text1[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+
+                    if(selectedTheme === 'dark')
+                    {
+                    themeButton.checked = true;
+                    }
+                    else
+                    {
+                        themeButton.checked = false;
+                    }
+            }
+            else
+            {
+                themeButton.checked = false;
+            }
+
+            // Activate / deactivate the theme manually with the button
+            themeButton.addEventListener('change', () =>
+            {
+                // Add or remove the dark / icon theme
+                document.body.classList.toggle(darkTheme);
+                
+                //all the elements to be toggled
+                for(let i=0;i<nav.length;i++)
+                    nav[i].classList.toggle(darkTheme);
+                
+                for(let i=0;i<listitem.length;i++)
+                    listitem[i].classList.toggle(darkTheme);
+
+                for(let i=0;i<mainCollection.length;i++)
+                    mainCollection[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<right.length;i++)
+                    right[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn.length;i++)
+                    btn[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<left.length;i++)
+                    left[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn1.length;i++)
+                    btn1[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn2.length;i++)
+                    btn2[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<text.length;i++)
+                    text[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<text1.length;i++)
+                    text1[i].classList.toggle(darkTheme);
+                
+                // We save the theme and the current icon that the user chose
+                localStorage.setItem('selected-theme', getCurrentTheme());
+            });
+            </script>
+
         <script>
             let score = 0;
             const BORDER = "black";

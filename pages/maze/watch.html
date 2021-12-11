@@ -11,7 +11,9 @@
     
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="../../assets/css/game.css">
-    
+        <link rel="stylesheet" href="../../assets/css/board_stylesheet.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -19,29 +21,44 @@
     <body>
         <nav>
             <div class="nav-wrapper">
-                <a href="../../index.html" class="brand-logo center red darken-1">&nbsp;&nbsp;&nbsp;Go to Home&nbsp;&nbsp;&nbsp;</a>
+                <a href="../../index.html" style="font-size: 25px;
+                padding: 0px 7%;" class="brand-logo center red darken-1">Go to Home</a>
             </div>
         </nav>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>The Snake DIED!</h4>
+              <p>Please start the game again.</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
 
-        <canvas id="gameCanvas" width="300" height="300"></canvas>
-
-        <div id="right">
-            <div id="score">Score = 0</div>
-            <input id="btn2" type=button onClick="location.reload()" value='RESTART'>
-        </div>
-
-        <div class="left">
-            <div id="speedX"></div>
-            <div id="speedY"></div>
-            <br><br>
-            <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
-            <button id="btn">Difficulty Up</button>
-            <button id="btn1">Difficulty Down</button>
-        </div>
+        <div class="main_game_box">
+            <div id="right">
+                <div id="score">Score = 0</div>
+                <input id="btn2" type=button onClick="location.reload()" value='RESTART'>
+            </div>
+            <div class="has-canvas"><canvas id="gameCanvas" width="300" height="300"></canvas></div> 
+            <div class="left">
+                <div id="speedX"></div>
+                <div id="speedY"></div>
+                <br><br>
+                <p>You can change the Difficulty by One Star at a time by pressing the buttons once</p>
+                <button id="btn">Difficulty Up</button>
+                <button id="btn1">Difficulty Down</button>
+            </div>
+    </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
         <script>
+              function openHandler(){
+            const elem = document.getElementById('modal1');
+            const instance = M.Modal.init(elem, {dismissible: true});
+            instance.open();
+            }
             let score = 0;
             const BORDER = "black";
             const BACKGROUND = "#ffffff";
@@ -95,7 +112,7 @@
                 swipechange(event);
                 if(didEnd())
                 {
-                    alert("The Snake DIED!");
+                    openHandler();
                     clearCanvas();
                     return;
                 }
@@ -238,25 +255,25 @@
                 const GOING_RIGHT = dx === 10;
 
                 // some modifications for controls with WASD
-                if((KEY === LEFT) || (KEY === 65) && !(GOING_RIGHT))
+                if(((KEY === LEFT) || (KEY === 65)) && !(GOING_RIGHT))
                 {
                     dx = -10;
                     dy = 0;
                 }
 
-                if((KEY === RIGHT) || (KEY === 68) && !(GOING_LEFT))
+                if(((KEY === RIGHT) || (KEY === 68)) && !(GOING_LEFT))
                 {
                     dx = 10;
                     dy = 0;
                 }
 
-                if((KEY === UP) || (KEY === 87) && !(GOING_DOWN))
+                if(((KEY === UP) || (KEY === 87)) && !(GOING_DOWN))
                 {
                     dx = 0;
                     dy = -10;
                 }
 
-                if((KEY === DOWN) || (KEY === 83) && !(GOING_UP))
+                if(((KEY === DOWN) || (KEY === 83)) && !(GOING_UP))
                 {
                     dx = 0;
                     dy = 10;

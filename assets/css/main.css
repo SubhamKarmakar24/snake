@@ -1,63 +1,264 @@
-body
-{
+body {
     /* background-color: rgb(240,240,240); */
     /* background-color: #FFE53B; */
-    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    --background-1: #ffe53b;
+    --background-2: #ff2525;
+    background-image: linear-gradient(147deg, var(--background-1) 0%, var(--background-2) 74%);
     background-attachment: fixed;
+    transition: 0.5s;
 }
 
-nav
+body.dark
 {
-    background-color: rgb(40,40,40);
+    --background-1: #201c02;
+    --background-2: #1f0505;
+}
+
+nav {
+    --background-1: rgb(184, 80, 80);
+    background-color: var(--background-1);
     font-size: 27px;
     font-weight: 700;
     padding-left: 20px;
+    transition: 0.5s;
 }
 
-.mainContent
+nav.dark
 {
+    --background-1: rgb(54, 6, 6);
+}
+
+
+.mainContent {
     margin: auto;
     margin-top: 30px;
-    width: 600px;  
+    /* width: 600px;   */
 }
 
-.listItem
+.list:hover
 {
+    --background: rgb(128, 0, 0);
+    background-color: var(--background);
+}
+
+.listItem {
+    --color: black;
+    --background-color: white;
     padding: 6px 20px;
-    color: black;
+    color: var(--color);
     font-weight: 600;
-    background-color: white;
+    background-color: var(--background-color);
     margin: 10px;
     border-radius: 7px;
+    transition: 0.5s;
 }
 
-.mainCollection
+
+.listItem.dark
 {
+    --color: white;
+    --background-color: black;
+}
+
+.mainCollection {
+    --background: rgb(230, 230, 230);
     border-radius: 5px;
-    background-color: rgb(230,230,230);
+    background-color: var(--background);
     padding: 1px 0px;
+    transition: 0.5s;
 }
 
-.collection-item
+.mainCollection.dark
 {
+    --background: rgb(73, 73, 73);
+}
+
+.collection-item {
     margin: 5px;
 }
 
-.text
-{
-    color: white;
+.text {
+    --color: #fff;
+    color: var(--color);
     font-weight: 600;
+    transition: 0.5s;
 }
 
-.text1
+.text.dark
 {
+    --color: #000;
+}
+
+.text2 {
+    --color: #000;
+    color: var(--color);
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.text2.dark
+{
+    --color: #fff;
+}
+
+.text1 {
+    --back: #fff;
+    --color: #000;
     width: 1000px;
     position: relative;
     top: 10px;
     margin: auto;
     border-radius: 5px;
-    color: black;
+    color: var(--color);
     padding: 20px;
     font-weight: 600;
+    background-color: var(--back);
+    transition: 0.5s;
+}
+
+.text1.dark
+{
+    --back: #000;
+    --color: #fff;
+}
+
+.collection
+{
+    --back: rgb(218, 218, 218);
+    background-color: var(--back) !important;
+    transition: 0.5s;
+}
+
+.collection.dark
+{
+    --back: #000;
+}
+
+.collection-item
+{
+    --back: #fff;
+    --color: #000;
+    background-color: var(--back) !important;
+    color: var(--color) !important;
+    transition: 0.5s;
+}
+
+.collection-item.dark
+{
+    --back: rgb(39, 39, 39);
+    --color: #fff;
+}
+
+
+
+
+
+
+
+
+/* toggle-button */
+.toggle-container
+{
+    margin-top: 18px;
+    margin-right: 20px;
+}
+
+.toggle-checkbox
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle-slot
+{
+    position: relative;
+    height: 2rem;
+    width: 4rem;
+    border: 2px solid #e4e7ec;
+    border-radius: 2em;
     background-color: white;
+    /* box-shadow: 0px 2px 4px #e4e7ec; */
+    transition: background-color 250ms;
+}
+
+.toggle-slot:hover
+{
+  cursor: pointer;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot
+{
+    background-color: #374151;
+}
+
+.toggle-button
+{
+    transform: translate(3.1em, 0.45em);
+    position: absolute;
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 1.5em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button
+{
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 1.5em white;
+    transform: translate(0.45em, 0.45em);
+}
+
+.sun-icon
+{
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    color: #ffbb52;
+}
+
+.sun-icon-wrapper
+{
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 1;
+    transform: translate(0.5em, .52em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper
+{
+    opacity: 0;
+    transform: translate(1.5em, .4em) rotate(0deg);
+}
+
+.moon-icon
+{
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    color: white;
+}
+
+.moon-icon-wrapper
+{
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 0;
+    transform: translate(2.1em, .52em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper
+{
+    opacity: 1;
+    transform: translate(3.1em, .52em) rotate(-15deg);
 }
