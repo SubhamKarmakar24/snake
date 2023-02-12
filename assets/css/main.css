@@ -24,11 +24,20 @@ nav
 .listItem
 {
     padding: 6px 20px;
-    color: black;
+    color: rgb(40,40,40);
     font-weight: 600;
     background-color: white;
     margin: 10px;
     border-radius: 7px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.listItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.1);
 }
 
 .mainCollection
@@ -47,17 +56,18 @@ nav
 {
     color: white;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .text1
 {
-    width: 1000px;
-    position: relative;
-    top: 10px;
-    margin: auto;
-    border-radius: 5px;
-    color: black;
-    padding: 20px;
+    max-width: 1080px;
+    margin: 50px auto;
+    border-radius: 10px;
+    color: rgb(40,40,40);
+    padding: 40px;
     font-weight: 600;
     background-color: white;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
 }
