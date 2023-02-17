@@ -8,6 +8,9 @@
 
 #right
 {
+    --background-color: #fff;
+    --color: #000;
+    color: var(--color);
     text-align: center;
     position: absolute;
     top: 50%;
@@ -17,7 +20,7 @@
     margin-top: -110px;
     /* margin: 100px 25px 0 0; */
     /* box-shadow: 15px 15px 15px  #689f38; */
-    background-color: #ffffff;
+    background-color: var(--background-color);
     width: 300px;
     height: 200px;
     /* border:2px solid black; */
@@ -26,6 +29,13 @@
     padding-left: 1.5%;
     font-size: 200%;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    transition: 0.5s;
+}
+
+#right.dark
+{
+    --background-color: #000;
+    --color: #fff;
 }
 
 #score
@@ -35,16 +45,26 @@
 
 #btn
 {
-    color: white;
-    background: #b71c1c;
+    --color: black;
+    --background: #d31515;
+    color: var(--color);
+    background: var(--background);
     margin: 20px 10px 20px 0;
     font-size: 140%;
     padding: 5px;
-    font-weight: 500 ;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+#btn.dark
+{
+    --color: white;
+    --background: #831515;
 }
 
 .left
 {
+    --back: #fff;
     border-radius: 10px;
     text-align: center;
     position: absolute;
@@ -55,26 +75,53 @@
     /* border: 2px solid #000000; */
     padding:30px 10px; 
     width: 375px;
-    background-color: #ffffff;
-    /* box-shadow: 15px 15px 15px  #c62828; */    
+    background-color: var(--back);
+    /* box-shadow: 15px 15px 15px  #c62828; */  
+    transition: 0.5s;  
+    --color: #000;
+    color: var(--color);
+}
+
+.left.dark
+{
+    --back: #000;
+    --color: #fff;
 }
 
 #btn1
 {
+    --color: black;
+    --back: #08fc08;
     font-size: 140%;
     margin: 20px 0 20px 10px;
     padding: 5px;
-    color: white;
+    color: var(--color);
     font-weight: 500 ;
-    background:#15e415;
+    background: var(--back);
+    transition: 0.5s;
+}
+
+#btn1.dark
+{
+    --color: white;
+    --back: #0e550e;
 }
 
 #btn2
 {
+    --color: black;
+    --back: #08fc08;
     font-size: 140%;
     margin: 20px 0px 20px 25px;
-    background:#15e415;
-    color: white;
+    background: var(--back);
+    color: var(--color);
+    transition: 0.5s;
+}
+
+#btn2.dark
+{
+    --color: white;
+    --back: #0e550e;
 }
 
 #speedX

@@ -8,6 +8,9 @@
     
         <!--Import materialize.css-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="../../assets/css/board_stylesheet.css">
+
+        <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 
         <script type="text/javascript">
             function initialize()
@@ -82,9 +85,25 @@
                     <div class="nav-wrapper">
                         <a href="#" class="brand-logo left styling">&nbsp;&nbsp;Feed the Snake</a>
                         <ul class="right hide-on-small-and-down">
-                            <li><a href="../index.html">Select Maze</a></li>
-                            <li class="active red"><a href="#">Difficulty</a></li>
-                            <li><a href="./instruction.html">Instructions</a></li>
+                            <li>
+                                <div class="toggle-container">
+                                    <label>
+                                        <input class='toggle-checkbox' id="toggle-checkbox" type='checkbox'></input>
+                                        <div class='toggle-slot'>
+                                            <div class='sun-icon-wrapper'>
+                                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                                            </div>
+                                            <div class='toggle-button'></div>
+                                            <div class='moon-icon-wrapper'>
+                                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list"><a href="../index.html">Select Maze</a></li>
+                            <li class="active red list"><a href="#">Difficulty</a></li>
+                            <li class="list"><a href="./instruction.html">Instructions</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -93,7 +112,7 @@
 
         <div id = "limitless">
             <div class="mainContent">
-                <div class="collection" style="padding: 10px;background-color: rgb(240,240,240);">
+                <div class="collection" style="padding: 10px;">
                     <a href="javascript:choose_challenge_type('limitless','5','200')" class="collection-item" style="margin: 8px;border-radius: 5px;">
                         <i class="material-icons circle purple darken-2">stars</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -134,7 +153,7 @@
                         FASTER
                     </a>
                 </div>
-                <div class="text">
+                <div class="text2">
                     <br>
                     You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
                 </div>
@@ -143,7 +162,7 @@
 
         <div id="keep">
             <div class="mainContent">
-                <div class="collection" style="padding: 10px;background-color: rgb(240,240,240);">
+                <div class="collection" style="padding: 10px;">
                     <a href="javascript:choose_challenge_type('keep','5','200')" class="collection-item" style="margin: 8px;border-radius: 5px;">
                         <i class="material-icons circle purple darken-2">stars</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -184,7 +203,7 @@
                         FASTER
                     </a>
                 </div>
-                <div class="text">
+                <div class="text2">
                     <br>
                     You can also change the Difficulty level in-game by adjusting the Speed Increase or Decrease button according to your needs.
                 </div>
@@ -193,7 +212,7 @@
 
         <div id = "sneak">
             <div class="mainContent">
-                <div class="collection" style="padding: 10px;background-color: rgb(240,240,240);">
+                <div class="collection" style="padding: 10px;">
                     <a href="javascript:choose_challenge_type('sneak','5','200')" class="collection-item" style="margin: 8px;border-radius: 5px;">
                         <i class="material-icons circle purple darken-2">stars</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -234,7 +253,7 @@
                         FASTER
                     </a>
                 </div>
-                <div class="text">
+                <div class="text2">
                     <br>
                     You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
                 </div>
@@ -243,7 +262,7 @@
 
         <div id = watch>
             <div class="mainContent">
-                <div class="collection" style="padding: 10px;background-color: rgb(240,240,240);">
+                <div class="collection" style="padding: 10px;">
                     <a href="javascript:choose_challenge_type('watch','5','200')" class="collection-item" style="margin: 8px;border-radius: 5px;">
                         <i class="material-icons circle purple darken-2">stars</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -284,7 +303,7 @@
                         FASTER
                     </a>
                 </div>
-                <div class="text">
+                <div class="text2">
                     <br>
                     You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
                 </div>
@@ -293,7 +312,7 @@
 
         <div id = death>
             <div class="mainContent">
-                <div class="collection" style="padding: 10px;background-color: rgb(240,240,240);">
+                <div class="collection" style="padding: 10px;">
                     <a href="javascript:choose_challenge_type('death','5','200')" class="collection-item" style="margin: 8px;border-radius: 5px;">
                         <i class="material-icons circle purple darken-2">stars</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -334,7 +353,7 @@
                         FASTER
                     </a>
                 </div>
-                <div class="text">
+                <div class="text2">
                     <br>
                     You can also change the Difficulty level in-game by the Speed Increase or Decrease button.
                 </div>
@@ -343,5 +362,143 @@
 
         <!--JavaScript at end of body for optimized loading-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script>
+            const themeButton = document.getElementById('toggle-checkbox');
+            const darkTheme = 'dark';
+
+            // Previously selected topic (if user selected)
+            const selectedTheme = localStorage.getItem('selected-theme');
+        
+            // We obtain the current theme that the interface has by validating the dark-theme class
+            const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+            
+            //all the elements to be toggled
+            const nav = document.querySelectorAll('nav');
+            const listitem = document.querySelectorAll('.listItem');
+            const mainCollection = document.querySelectorAll('.mainCollection');
+            const right = document.querySelectorAll('#right');
+            const btn = document.querySelectorAll('#btn');
+            const left = document.querySelectorAll('.left');
+            const btn1 = document.querySelectorAll('#btn1');
+            const btn2 = document.querySelectorAll('#btn2');
+            const text = document.querySelectorAll('.text');
+            const text1 = document.querySelectorAll('.text1');
+            const text2 = document.querySelectorAll('.text2');
+            const collection = document.querySelectorAll('.collection');
+            const collectionItem = document.querySelectorAll('.collection-item');
+            
+            // We validate if the user previously chose a topic
+            if(selectedTheme)
+            {
+                // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+                document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+
+                //all the elements to be toggled
+                for(let i=0;i<nav.length;i++)
+                    nav[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                for(let i=0;i<listitem.length;i++)
+                    listitem[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                for(let i=0;i<mainCollection.length;i++)
+                    mainCollection[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+                
+                    for(let i=0;i<right.length;i++)
+                    right[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn.length;i++)
+                    btn[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<left.length;i++)
+                    left[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn1.length;i++)
+                    btn1[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<btn2.length;i++)
+                    btn2[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<text.length;i++)
+                    text[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<text1.length;i++)
+                    text1[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<text2.length;i++)
+                    text2[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<collection.length;i++)
+                    collection[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+                    for(let i=0;i<collectionItem.length;i++)
+                    collectionItem[i].classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+
+
+                    if(selectedTheme === 'dark')
+                    {
+                    themeButton.checked = true;
+                    }
+                    else
+                    {
+                        themeButton.checked = false;
+                    }
+            }
+            else
+            {
+                themeButton.checked = false;
+            }
+
+            // Activate / deactivate the theme manually with the button
+            themeButton.addEventListener('change', () =>
+            {
+                // Add or remove the dark / icon theme
+                document.body.classList.toggle(darkTheme);
+                
+                //all the elements to be toggled
+                for(let i=0;i<nav.length;i++)
+                    nav[i].classList.toggle(darkTheme);
+                
+                for(let i=0;i<listitem.length;i++)
+                    listitem[i].classList.toggle(darkTheme);
+
+                for(let i=0;i<mainCollection.length;i++)
+                    mainCollection[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<right.length;i++)
+                    right[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn.length;i++)
+                    btn[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<left.length;i++)
+                    left[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn1.length;i++)
+                    btn1[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<btn2.length;i++)
+                    btn2[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<text.length;i++)
+                    text[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<text1.length;i++)
+                    text1[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<text2.length;i++)
+                    text2[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<collection.length;i++)
+                    collection[i].classList.toggle(darkTheme);
+
+                    for(let i=0;i<collectionItem.length;i++)
+                    collectionItem[i].classList.toggle(darkTheme);
+                
+                // We save the theme and the current icon that the user chose
+                localStorage.setItem('selected-theme', getCurrentTheme());
+            });
+            </script>
     </body>
 </html>
