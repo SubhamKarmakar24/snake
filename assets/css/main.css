@@ -45,12 +45,22 @@ nav.dark
     --color: black;
     --background-color: white;
     padding: 6px 20px;
-    color: var(--color);
+
+    color: rgb(40,40,40);
     font-weight: 600;
     background-color: var(--background-color);
     margin: 10px;
     border-radius: 7px;
-    transition: 0.5s;
+
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.listItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.1);
 }
 
 
@@ -93,12 +103,20 @@ nav.dark
     --color: #000;
     color: var(--color);
     font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
     transition: 0.5s;
 }
 
 .text2.dark
 {
-    --color: #fff;
+
+    max-width: 1080px;
+    margin: 50px auto;
+    border-radius: 10px;
+    color: rgb(40,40,40);
+    padding: 40px;
 }
 
 .text1 {
@@ -111,6 +129,7 @@ nav.dark
     border-radius: 5px;
     color: var(--color);
     padding: 20px;
+
     font-weight: 600;
     background-color: var(--back);
     transition: 0.5s;
@@ -180,6 +199,9 @@ nav.dark
     border: 2px solid #e4e7ec;
     border-radius: 2em;
     background-color: white;
+
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+
     /* box-shadow: 0px 2px 4px #e4e7ec; */
     transition: background-color 250ms;
 }
